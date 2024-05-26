@@ -12,6 +12,8 @@ services:
     build: ./nginx
     ports:
       - "80:80"
+    volumes:
+      - /nginx-log:/var/log/nginx
     depends_on:
       - load-app1
       - load-app2
