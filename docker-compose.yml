@@ -1,0 +1,17 @@
+version: '3'
+services:
+  load-app1:
+    build: ./app1
+    container_name: load-app1
+
+  load-app2:
+    build: ./app2
+    container_name: load-app2
+
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - load-app1
+      - load-app2
